@@ -13,6 +13,7 @@
 		1EAC856020E476F40066F76F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EAC855E20E476F40066F76F /* Main.storyboard */; };
 		1EAC856C20E476F40066F76F /* UploadPurchaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC856B20E476F40066F76F /* UploadPurchaseTests.swift */; };
 		1EAC857720E476F40066F76F /* UploadPurchaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC857620E476F40066F76F /* UploadPurchaseUITests.swift */; };
+		1EAC858920E5CB3F0066F76F /* PurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC858820E5CB3F0066F76F /* PurchaseCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		1EAC857220E476F40066F76F /* UploadPurchaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UploadPurchaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EAC857620E476F40066F76F /* UploadPurchaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPurchaseUITests.swift; sourceTree = "<group>"; };
 		1EAC857820E476F40066F76F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EAC858820E5CB3F0066F76F /* PurchaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				1EAC855820E476F30066F76F /* AppDelegate.swift */,
 				1EAC855A20E476F30066F76F /* ViewController.swift */,
+				1EAC858820E5CB3F0066F76F /* PurchaseCell.swift */,
 				1EAC855C20E476F40066F76F /* Assets.xcassets */,
 				1EAC855E20E476F40066F76F /* Main.storyboard */,
 				1EAC856120E476F40066F76F /* Info.plist */,
@@ -256,6 +259,7 @@
 			files = (
 				1EAC855B20E476F30066F76F /* ViewController.swift in Sources */,
 				1EAC855920E476F30066F76F /* AppDelegate.swift in Sources */,
+				1EAC858920E5CB3F0066F76F /* PurchaseCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

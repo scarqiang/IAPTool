@@ -9,10 +9,17 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    
+    @IBOutlet weak var tableView: NSTableView!
+    
+    var purchaseItems:[PurchaseItem] = [PurchaseItem()];
+    let cellIndentifier = "PurchaseCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +28,40 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    
+    @IBAction func didClickAddItemBtn(_ sender: NSButton) {
+        purchaseItems.append(PurchaseItem())
+        tableView.reloadData()
+        tableView.scrollRowToVisible(purchaseItems.count - 1)
+    }
+    
+    
+    @IBAction func didClickRemoveItemBtn(_ sender: NSButton) {
+        
+        if tableView.selectedRow == -1 {
+            return
+        }
+        
+        purchaseItems.remove(at: tableView.selectedRow)
+        tableView.reloadData()
+    }
+    
+}
 
-
+extension ViewController:  NSTableViewDataSource, NSTableViewDelegate {
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return purchaseItems.count;
+    }
+    
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(cellIndentifier), owner: self) as? PurchaseCell {
+            cell.index = row
+            cell.setPurchaseInfo(purchaseItems[row])
+            return cell
+        }
+        
+        return nil
+    }
 }
 
