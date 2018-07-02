@@ -11,14 +11,21 @@ import Cocoa
 class ViewController: NSViewController {
     
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var purchaseNumber: NSTextField!
     
-    var purchaseItems:[PurchaseItem] = [PurchaseItem()];
+    var purchaseItems:[PurchaseItem] = [PurchaseItem()] {
+        didSet {
+            self.purchaseNumber.stringValue = "商品总数：\(self.purchaseItems.count)"
+        }
+    }
     let cellIndentifier = "PurchaseCell"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
         
         // Do any additional setup after loading the view.
     }

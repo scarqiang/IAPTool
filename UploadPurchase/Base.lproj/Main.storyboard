@@ -687,8 +687,9 @@
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="400"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="600" height="300"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -710,7 +711,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gjk-D4-OEM">
-                                <rect key="frame" x="509" y="34" width="25" height="27"/>
+                                <rect key="frame" x="510" y="34" width="25" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="DWi-r9-SfB"/>
                                     <constraint firstAttribute="width" constant="25" id="r2h-2j-b9q"/>
@@ -724,7 +725,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9kW-ZP-nOK">
-                                <rect key="frame" x="554" y="34" width="25" height="27"/>
+                                <rect key="frame" x="555" y="34" width="25" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="L0g-E7-5LQ"/>
                                     <constraint firstAttribute="width" constant="25" id="iF9-WI-KFU"/>
@@ -921,7 +922,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EIj-9V-dJh">
-                                                                    <rect key="frame" x="90" y="11" width="444" height="22"/>
+                                                                    <rect key="frame" x="90" y="11" width="445" height="22"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="22" id="fa0-SU-Iuy"/>
                                                                     </constraints>
@@ -963,16 +964,16 @@
                                                                 <constraint firstItem="kY3-fx-Wfx" firstAttribute="top" secondItem="PPt-ju-ZxC" secondAttribute="top" constant="20" id="1cH-7z-S7V"/>
                                                                 <constraint firstItem="EIj-9V-dJh" firstAttribute="centerY" secondItem="Wn9-en-sTn" secondAttribute="centerY" id="340-KB-qGy"/>
                                                                 <constraint firstItem="3jO-Y5-JT5" firstAttribute="centerY" secondItem="kY3-fx-Wfx" secondAttribute="centerY" id="8oA-rd-RAg"/>
+                                                                <constraint firstAttribute="trailing" secondItem="EIj-9V-dJh" secondAttribute="trailing" constant="20" id="9l6-KY-RY8"/>
                                                                 <constraint firstItem="K2b-2L-3Ga" firstAttribute="leading" secondItem="kY3-fx-Wfx" secondAttribute="leading" id="AHo-eJ-5Tu"/>
                                                                 <constraint firstItem="Wkh-KF-Rrd" firstAttribute="centerY" secondItem="h15-6q-wXh" secondAttribute="centerY" id="CEr-Bg-pPK"/>
                                                                 <constraint firstItem="K2b-2L-3Ga" firstAttribute="top" secondItem="kY3-fx-Wfx" secondAttribute="bottom" constant="20" id="GYI-Jo-wt7"/>
                                                                 <constraint firstItem="zb9-su-JvP" firstAttribute="centerY" secondItem="wWB-Xe-Wpa" secondAttribute="centerY" id="JBV-CF-4xp"/>
                                                                 <constraint firstItem="wWB-Xe-Wpa" firstAttribute="leading" secondItem="x9M-FG-mR6" secondAttribute="trailing" constant="10" id="KJT-dZ-Puo"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Wkh-KF-Rrd" secondAttribute="trailing" constant="20" id="Kqo-B1-rVq"/>
                                                                 <constraint firstItem="LWm-k8-DZ5" firstAttribute="leading" secondItem="K2b-2L-3Ga" secondAttribute="trailing" id="Lua-Rg-G6K"/>
-                                                                <constraint firstItem="EIj-9V-dJh" firstAttribute="trailing" secondItem="4Kt-pM-bEE" secondAttribute="trailing" id="MRy-g4-Dne"/>
                                                                 <constraint firstItem="Ojb-vH-JdB" firstAttribute="centerY" secondItem="LWm-k8-DZ5" secondAttribute="centerY" id="Ngz-pF-s6C"/>
                                                                 <constraint firstItem="Wn9-en-sTn" firstAttribute="leading" secondItem="h15-6q-wXh" secondAttribute="leading" id="Oed-Sz-Xv8"/>
-                                                                <constraint firstItem="Wkh-KF-Rrd" firstAttribute="trailing" secondItem="zb9-su-JvP" secondAttribute="trailing" id="OkQ-AS-QjK"/>
                                                                 <constraint firstItem="Wn9-en-sTn" firstAttribute="top" secondItem="h15-6q-wXh" secondAttribute="bottom" constant="40" id="PTl-sM-ivT"/>
                                                                 <constraint firstItem="h15-6q-wXh" firstAttribute="leading" secondItem="K2b-2L-3Ga" secondAttribute="leading" id="Q24-t4-pzW"/>
                                                                 <constraint firstItem="VtS-KZ-Al5" firstAttribute="leading" secondItem="3jO-Y5-JT5" secondAttribute="trailing" constant="20" id="QfA-r3-Orq"/>
@@ -1017,25 +1018,36 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Iz1-SQ-rlf">
+                                <rect key="frame" x="18" y="55" width="77" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="商品总数：1" id="oMO-88-Cmu">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="Iz1-SQ-rlf" firstAttribute="top" secondItem="BKU-qx-fiR" secondAttribute="bottom" constant="8" id="2cq-E4-qhg"/>
                             <constraint firstItem="BKU-qx-fiR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="9mp-NU-iv2"/>
-                            <constraint firstItem="9kW-ZP-nOK" firstAttribute="trailing" secondItem="Dhf-fS-DrY" secondAttribute="trailing" id="Avd-zo-q7a"/>
+                            <constraint firstAttribute="trailing" secondItem="9kW-ZP-nOK" secondAttribute="trailing" constant="20" id="EpT-VA-hJA"/>
                             <constraint firstItem="BKU-qx-fiR" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="30" id="Sh2-WC-Zsb"/>
                             <constraint firstItem="Gjk-D4-OEM" firstAttribute="centerY" secondItem="9kW-ZP-nOK" secondAttribute="centerY" id="TNy-6G-aPp"/>
                             <constraint firstItem="9kW-ZP-nOK" firstAttribute="top" secondItem="BKU-qx-fiR" secondAttribute="bottom" constant="20" id="VFl-TA-97L"/>
                             <constraint firstAttribute="bottom" secondItem="BKU-qx-fiR" secondAttribute="bottom" constant="80" id="efr-SI-loM"/>
                             <constraint firstAttribute="trailing" secondItem="BKU-qx-fiR" secondAttribute="trailing" constant="20" id="jAP-8a-bLr"/>
+                            <constraint firstItem="Iz1-SQ-rlf" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ui7-Us-7Ce"/>
                             <constraint firstItem="9kW-ZP-nOK" firstAttribute="leading" secondItem="Gjk-D4-OEM" secondAttribute="trailing" constant="20" id="yiZ-eg-VwG"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="purchaseNumber" destination="Iz1-SQ-rlf" id="rCz-G2-YW2"/>
                         <outlet property="tableView" destination="Dhf-fS-DrY" id="cja-Ti-cnM"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98" y="768"/>
+            <point key="canvasLocation" x="75" y="1007"/>
         </scene>
     </scenes>
     <resources>
