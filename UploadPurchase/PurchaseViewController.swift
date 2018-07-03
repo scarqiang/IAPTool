@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class PurchaseViewController: NSViewController {
     
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var purchaseNumber: NSTextField!
@@ -26,7 +26,7 @@ class ViewController: NSViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        
+    
         // Do any additional setup after loading the view.
     }
 
@@ -53,9 +53,13 @@ class ViewController: NSViewController {
         tableView.reloadData()
     }
     
+    @IBAction func didClickSubmit(_ sender: NSButton) {
+//        let nextViewController = storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("submitViewController")) as! NSViewController
+//        self.presentViewController(nextViewController, animator: ReplacePresentationAnimator())
+    }
 }
 
-extension ViewController:  NSTableViewDataSource, NSTableViewDelegate {
+extension PurchaseViewController:  NSTableViewDataSource, NSTableViewDelegate {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return purchaseItems.count;
@@ -71,4 +75,5 @@ extension ViewController:  NSTableViewDataSource, NSTableViewDelegate {
         return nil
     }
 }
+
 
