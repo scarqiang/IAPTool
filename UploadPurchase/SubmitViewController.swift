@@ -38,8 +38,10 @@ class SubmitViewController: NSViewController {
             else {
                 self.tipsLabel.stringValue = "❌上传成功失败"
             }
-            
+
             self.showInfoTextView.string = errorMsg ?? ""
+            let range = NSRange(location:self.showInfoTextView.string.count,length:0)
+            self.showInfoTextView.scrollRangeToVisible(range)
         };
     }
     
@@ -47,12 +49,14 @@ class SubmitViewController: NSViewController {
     @IBAction func exit(_ sender: Any) {
         if self.result {
             TaskTool.shared.deleteTaggertItmsp()
+            dismissViewController(self)
             NSApp.terminate(nil)
         }
         else {
             TaskTool.shared.replaceTaggertItmsp()
             dismissViewController(self)
         }
+
     }
     
 }

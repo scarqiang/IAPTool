@@ -61,7 +61,7 @@ class LoginViewController: NSViewController {
     }
     
     func startLogin() {
-        
+
 //        let  xmlProcessor = XMLProcessor()
 //
 //        xmlProcessor.loadFromFile("\(TaskTool.shared.metadataPath)/\(1039795442).itmsp/metadata.xml")
@@ -102,6 +102,7 @@ class LoginViewController: NSViewController {
     }
     
     func presentPurchaseViewController() {
+        
         let nextWindowController = storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PurchaseWindow")) as! NSWindowController
         nextWindowController.window?.orderFront(nil)
         nextWindowController.window?.center()

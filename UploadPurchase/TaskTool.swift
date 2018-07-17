@@ -133,9 +133,13 @@ final class TaskTool {
     }
     
     func replaceTaggertItmsp() {
+        
+        let orignXmlPath = "\(self.taggertAppMetadatPath)/metadata.xml"
+        let backupsXmlPath = "\(self.backupsPath)/metadata.xml"
+        
         do {
-            try FileManager.default.removeItem(atPath: self.taggertAppMetadatPath)
-            try FileManager.default.copyItem(atPath: self.backupsPath, toPath: self.taggertAppMetadatPath)
+            try FileManager.default.removeItem(atPath: orignXmlPath)
+            try FileManager.default.copyItem(atPath: backupsXmlPath, toPath: orignXmlPath)
         } catch {
             print("ERROR: Replace Tarrget Itmsp error: \(error.localizedDescription)")
         }
