@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E23225020FD93650011D44F /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E23224F20FD93650011D44F /* SubmitViewController.swift */; };
 		1EA11D0620EA020D008A338E /* CustomTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA11D0520EA020D008A338E /* CustomTextFieldCell.swift */; };
 		1EA11D0820EA0609008A338E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA11D0720EA0609008A338E /* LoginViewController.swift */; };
 		1EA11D0A20EA2E2E008A338E /* TaskTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA11D0920EA2E2E008A338E /* TaskTool.swift */; };
@@ -38,10 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E23224F20FD93650011D44F /* SubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 		1EA11D0520EA020D008A338E /* CustomTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldCell.swift; sourceTree = "<group>"; };
 		1EA11D0720EA0609008A338E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1EA11D0920EA2E2E008A338E /* TaskTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTool.swift; sourceTree = "<group>"; };
 		1EA11FE520EB762C008A338E /* XMLProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLProcessor.swift; sourceTree = "<group>"; };
+		1EA11FE720ECAEEB008A338E /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		1EAC855520E476F30066F76F /* UploadPurchase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UploadPurchase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EAC855820E476F30066F76F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EAC855A20E476F30066F76F /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
@@ -111,12 +114,14 @@
 				1EAC855A20E476F30066F76F /* PurchaseViewController.swift */,
 				1EAC858820E5CB3F0066F76F /* PurchaseCell.swift */,
 				1EA11D0520EA020D008A338E /* CustomTextFieldCell.swift */,
+				1E23224F20FD93650011D44F /* SubmitViewController.swift */,
 				1EA11D0920EA2E2E008A338E /* TaskTool.swift */,
 				1EA11FE520EB762C008A338E /* XMLProcessor.swift */,
 				1EAC855C20E476F40066F76F /* Assets.xcassets */,
 				1EAC855E20E476F40066F76F /* Main.storyboard */,
 				1EAC856120E476F40066F76F /* Info.plist */,
 				1EAC856220E476F40066F76F /* UploadPurchase.entitlements */,
+				1EA11FE720ECAEEB008A338E /* Bridging-Header.h */,
 			);
 			path = UploadPurchase;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E23225020FD93650011D44F /* SubmitViewController.swift in Sources */,
 				1EA11D0620EA020D008A338E /* CustomTextFieldCell.swift in Sources */,
 				1EAC855B20E476F30066F76F /* PurchaseViewController.swift in Sources */,
 				1EA11D0A20EA2E2E008A338E /* TaskTool.swift in Sources */,
@@ -462,6 +468,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.3k.UploadPurchase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mohansihai/Desktop/UploadPurchase/UploadPurchase/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -488,6 +495,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.3k.UploadPurchase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mohansihai/Desktop/UploadPurchase/UploadPurchase/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

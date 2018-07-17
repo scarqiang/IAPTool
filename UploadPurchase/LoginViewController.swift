@@ -62,11 +62,22 @@ class LoginViewController: NSViewController {
     
     func startLogin() {
         
-        let  xmlProcessor = XMLProcessor()
-        xmlProcessor.loadFromFile("\(TaskTool.shared.metadataPath)/\(appleIDField.stringValue).itmsp/metadata.xml")
-        return
+//        let  xmlProcessor = XMLProcessor()
+//
+//        xmlProcessor.loadFromFile("\(TaskTool.shared.metadataPath)/\(1039795442).itmsp/metadata.xml")
+////        xmlProcessor.loadFromFile("\(TaskTool.shared.metadataPath)/\(appleIDField.stringValue).itmsp/metadata.xml")
+//        let item = PurchaseItem()
+//        item.priceTier = "商品等级"
+//        item.description = "这是商品描述"
+//        item.productTitle = "商品标题"
+//        item.productID = "商品ID"
+//        item.referenceName = "商品应用名"
+//        item.productType = "商品类型"
+//
+//        xmlProcessor.setInAppPurchase(item)
+//        return
         
-        UserInfo.saveUserInfo(usernameField.stringValue, passWordField.stringValue, appleIDField.stringValue)
+        _ = UserInfo.saveUserInfo(usernameField.stringValue, passWordField.stringValue, appleIDField.stringValue)
         
         indicator.isHidden = false
         indicator.startAnimation(self)
@@ -88,18 +99,6 @@ class LoginViewController: NSViewController {
                 self.showWarnning(errmsg ?? "登录失败")
             }
         }
-        
-//        TaskTool.shared.executeTransporterInialazation("kkk5ios2016@qq.com", password: "IOS3kwan2016", appleID: "1391449525") {success, errmsg  in
-//            self.indicator.stopAnimation(self)
-//
-//            if success == true {
-//                self.indicator.isHidden = true
-//                self.tipsField.stringValue = "✅登录成功"
-//            }
-//            else {
-//                self.showWarnning(errmsg ?? "登录失败")
-//            }
-//        }
     }
     
     func presentPurchaseViewController() {

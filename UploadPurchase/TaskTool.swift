@@ -14,7 +14,7 @@ final class TaskTool {
     static let shared = TaskTool()
     private var transporterPath: String {
         get {
-            return "\(self.destinationPath)/itms/bin/iTMSTransporter"
+            return "/usr/local/itms/bin/iTMSTransporter"
         }
     }
     
@@ -25,10 +25,34 @@ final class TaskTool {
         }
     }
     
+    private var backupsPath: String {
+        get {
+            
+            let path = "\(self.destinationPath)/backup"
+            
+            if FileManager.default.fileExists(atPath: path) == false {
+                do {
+                    try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+                } catch {
+                    print("ERROR: Replace Tarrget Itmsp error: \(error.localizedDescription)")
+                }
+            }
+            
+            let appleID = UserInfo.fetchUserInfo(UserInfo.appleIDKey)!
+            return "\(destinationPath)/backup/\(appleID).itmsp"
+        }
+    }
     
     var metadataPath: String {
         get {
             return "\(self.destinationPath)/metadata"
+        }
+    }
+    
+    var taggertAppMetadatPath: String {
+        get {
+            let appleID = UserInfo.fetchUserInfo(UserInfo.appleIDKey)!
+            return "\(metadataPath)/\(appleID).itmsp"
         }
     }
     
@@ -58,6 +82,12 @@ final class TaskTool {
         task.terminationHandler = { process in              // 执行结束的闭包(回调)
             DispatchQueue.main.async {
                 
+                do {
+                    try FileManager.default.copyItem(atPath: self.taggertAppMetadatPath, toPath: self.backupsPath)
+                } catch {
+                    print("ERROR: Copy Tarrget Itmsp error: \(error.localizedDescription)")
+                }
+                
                 let success = process.terminationStatus == 0
                 let errData = errPipe.fileHandleForReading.readDataToEndOfFile()
                 let errStr = String.init(data: errData, encoding: .utf8)
@@ -67,6 +97,48 @@ final class TaskTool {
         }
         task.launch()
         task.waitUntilExit()
+    }
+    
+    func submitPurchase(_ complition: @escaping (_ success: Bool, _ errmsg: String?) -> Void) {
+        let task = Process()
+        task.launchPath = self.transporterPath
+        task.arguments = ["-m", "upload", "-f", self.taggertAppMetadatPath, "-u", UserInfo.fetchUserInfo(UserInfo.usernameKey), "-p", UserInfo.fetchUserInfo(UserInfo.passwordKey), "-v", "eXtreme", "-t", "DAV", "-errorLogs", "\(destinationPath)/errorlog"] as? [String]
+        
+        
+        
+        let errPipe = Pipe()
+        task.standardError = errPipe;
+        
+        task.terminationHandler = { process in              // 执行结束的闭包(回调)
+            DispatchQueue.main.async {
+                
+                let success = process.terminationStatus == 0
+                let errData = errPipe.fileHandleForReading.readDataToEndOfFile()
+                let errStr = String.init(data: errData, encoding: .utf8)
+                
+                complition(success, errStr)
+            }
+        }
+        task.launch()
+        task.waitUntilExit()
+    }
+    
+    func deleteTaggertItmsp() {
+        do {
+            try FileManager.default.removeItem(atPath: self.taggertAppMetadatPath)
+            try FileManager.default.removeItem(atPath: self.backupsPath)
+        } catch {
+            print("ERROR: Remove Tarrget Itmsp error: \(error.localizedDescription)")
+        }
+    }
+    
+    func replaceTaggertItmsp() {
+        do {
+            try FileManager.default.removeItem(atPath: self.taggertAppMetadatPath)
+            try FileManager.default.copyItem(atPath: self.backupsPath, toPath: self.taggertAppMetadatPath)
+        } catch {
+            print("ERROR: Replace Tarrget Itmsp error: \(error.localizedDescription)")
+        }
     }
 }
 

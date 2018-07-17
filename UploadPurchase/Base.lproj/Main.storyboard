@@ -690,7 +690,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="600" height="400"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="600" height="300"/>
+                        <value key="minSize" type="size" width="600" height="400"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -700,7 +700,7 @@
                     </connections>
                 </windowController>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="75" y="177"/>
         </scene>
         <!--Purchase View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -739,7 +739,7 @@
                                 </connections>
                             </button>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="202" horizontalPageScroll="10" verticalLineScroll="202" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKU-qx-fiR">
-                                <rect key="frame" x="20" y="80" width="560" height="290"/>
+                                <rect key="frame" x="20" y="70" width="560" height="290"/>
                                 <clipView key="contentView" drawsBackground="NO" id="tcp-Xo-WhT">
                                     <rect key="frame" x="1" y="1" width="558" height="288"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -850,6 +850,9 @@
                                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
+                                                                    <connections>
+                                                                        <outlet property="delegate" destination="PPt-ju-ZxC" id="rs0-gK-YnJ"/>
+                                                                    </connections>
                                                                 </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-Xe-Wpa">
                                                                     <rect key="frame" x="305" y="126" width="97" height="17"/>
@@ -926,7 +929,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="22" id="fa0-SU-Iuy"/>
                                                                     </constraints>
-                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="IZI-zq-fZq">
+                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="请上传iphone截图" drawsBackground="YES" id="IZI-zq-fZq">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -958,6 +961,9 @@
                                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
+                                                                    <connections>
+                                                                        <outlet property="delegate" destination="PPt-ju-ZxC" id="I6X-7E-QJI"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
@@ -1019,7 +1025,7 @@
                                 </scroller>
                             </scrollView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Iz1-SQ-rlf">
-                                <rect key="frame" x="18" y="55" width="77" height="17"/>
+                                <rect key="frame" x="18" y="45" width="77" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="商品总数：1" id="oMO-88-Cmu">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1039,31 +1045,125 @@
                                     <action selector="didClickSubmit:" target="XfG-lQ-9wD" id="5kZ-ak-bXe"/>
                                 </connections>
                             </button>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="mO0-hH-PJR">
+                                <rect key="frame" x="20" y="369" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="18" id="OWs-EM-spv"/>
+                                    <constraint firstAttribute="height" constant="18" id="Soc-FN-rqt"/>
+                                </constraints>
+                            </progressIndicator>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uzp-pU-FkC">
+                                <rect key="frame" x="41" y="370" width="37" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="YIS-OA-zf0">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Iz1-SQ-rlf" firstAttribute="top" secondItem="BKU-qx-fiR" secondAttribute="bottom" constant="8" id="2cq-E4-qhg"/>
                             <constraint firstItem="BKU-qx-fiR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="9mp-NU-iv2"/>
                             <constraint firstAttribute="trailing" secondItem="9kW-ZP-nOK" secondAttribute="trailing" constant="20" id="EpT-VA-hJA"/>
                             <constraint firstItem="Gjk-D4-OEM" firstAttribute="leading" secondItem="6An-nL-G2H" secondAttribute="trailing" constant="20" id="MWs-2Z-mSs"/>
-                            <constraint firstItem="BKU-qx-fiR" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="30" id="Sh2-WC-Zsb"/>
+                            <constraint firstItem="mO0-hH-PJR" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="13" id="Muk-mD-ISQ"/>
+                            <constraint firstItem="BKU-qx-fiR" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="Sh2-WC-Zsb"/>
                             <constraint firstItem="Gjk-D4-OEM" firstAttribute="centerY" secondItem="9kW-ZP-nOK" secondAttribute="centerY" id="TNy-6G-aPp"/>
-                            <constraint firstItem="9kW-ZP-nOK" firstAttribute="top" secondItem="BKU-qx-fiR" secondAttribute="bottom" constant="30" id="VFl-TA-97L"/>
-                            <constraint firstAttribute="bottom" secondItem="BKU-qx-fiR" secondAttribute="bottom" constant="80" id="efr-SI-loM"/>
+                            <constraint firstItem="9kW-ZP-nOK" firstAttribute="top" secondItem="BKU-qx-fiR" secondAttribute="bottom" constant="20" id="VFl-TA-97L"/>
+                            <constraint firstItem="uzp-pU-FkC" firstAttribute="centerY" secondItem="mO0-hH-PJR" secondAttribute="centerY" id="WB9-I1-gkN"/>
+                            <constraint firstAttribute="bottom" secondItem="BKU-qx-fiR" secondAttribute="bottom" constant="70" id="efr-SI-loM"/>
                             <constraint firstItem="6An-nL-G2H" firstAttribute="centerY" secondItem="Gjk-D4-OEM" secondAttribute="centerY" id="hb0-zU-Zhj"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Iz1-SQ-rlf" secondAttribute="trailing" constant="20" symbolic="YES" id="iFl-CY-HEj"/>
                             <constraint firstAttribute="trailing" secondItem="BKU-qx-fiR" secondAttribute="trailing" constant="20" id="jAP-8a-bLr"/>
                             <constraint firstItem="Iz1-SQ-rlf" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ui7-Us-7Ce"/>
+                            <constraint firstItem="uzp-pU-FkC" firstAttribute="leading" secondItem="mO0-hH-PJR" secondAttribute="trailing" constant="5" id="uls-FN-qs2"/>
                             <constraint firstItem="9kW-ZP-nOK" firstAttribute="leading" secondItem="Gjk-D4-OEM" secondAttribute="trailing" constant="20" id="yiZ-eg-VwG"/>
+                            <constraint firstItem="mO0-hH-PJR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="zZ7-jg-a5f"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="mO0-hH-PJR" id="ObU-6M-WhZ"/>
                         <outlet property="purchaseNumber" destination="Iz1-SQ-rlf" id="rCz-G2-YW2"/>
+                        <outlet property="submitBtn" destination="6An-nL-G2H" id="dIv-7A-wU5"/>
                         <outlet property="tableView" destination="Dhf-fS-DrY" id="cja-Ti-cnM"/>
+                        <outlet property="tipsTextField" destination="uzp-pU-FkC" id="kdp-3J-YYQ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="829"/>
+        </scene>
+        <!--Submit View Controller-->
+        <scene sceneID="Kjy-kH-MaQ">
+            <objects>
+                <viewController storyboardIdentifier="SubmitViewController" id="D99-6c-L6t" customClass="SubmitViewController" customModule="UploadPurchase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Wzo-Da-PVb">
+                        <rect key="frame" x="0.0" y="0.0" width="513" height="351"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umh-4x-jO8">
+                                <rect key="frame" x="26" y="41" width="460" height="235"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <clipView key="contentView" ambiguous="YES" id="XdG-iK-cN2">
+                                    <rect key="frame" x="1" y="1" width="458" height="233"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="RUX-7I-Rjz">
+                                            <rect key="frame" x="0.0" y="0.0" width="458" height="233"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="458" height="233"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Uqa-5p-k96">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="CXJ-YS-VLh">
+                                    <rect key="frame" x="443" y="1" width="16" height="233"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a51-Wp-peK">
+                                <rect key="frame" x="50" y="296" width="141" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="正在上传..." id="5FN-8K-7ub">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="qar-8x-Ck0">
+                                <rect key="frame" x="28" y="296" width="16" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </progressIndicator>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qrv-rh-ce7">
+                                <rect key="frame" x="223" y="1" width="67" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="返回" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iOe-gm-bZc">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="exit:" target="D99-6c-L6t" id="vum-8A-jLJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="exitBtn" destination="qrv-rh-ce7" id="d02-LV-grd"/>
+                        <outlet property="loadingView" destination="qar-8x-Ck0" id="EiJ-Gi-ONg"/>
+                        <outlet property="showInfoTextView" destination="RUX-7I-Rjz" id="sT6-It-2BY"/>
+                        <outlet property="tipsLabel" destination="a51-Wp-peK" id="wYR-fc-vfb"/>
+                    </connections>
+                </viewController>
+                <customObject id="pIh-AV-CcX" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="817.5" y="812.5"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="0lX-La-cbp">

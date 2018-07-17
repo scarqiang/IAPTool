@@ -155,11 +155,19 @@ class PurchaseCell: NSTableCellView {
         openPanel.showsHiddenFiles = false
         openPanel.allowedFileTypes = ["jpg", "png"]
         
+
         openPanel.beginSheetModal(for:NSApplication.shared.keyWindow!) { (result) in
             // 选择确认按钮
             if result == NSApplication.ModalResponse.OK {
                 self.purshaseItem!.screenshortURL = (openPanel.url?.path)!
                 self.screenshortField.stringValue = (openPanel.url?.path)!
+                let fileName = (self.purshaseItem!.screenshortURL as NSString).lastPathComponent
+                
+                do {
+                    try FileManager.default.copyItem(atPath: (openPanel.url?.path)!, toPath: "\(TaskTool.shared.taggertAppMetadatPath)/\(fileName)")
+                } catch  {
+                    print("ERROR: Save shootscreen error: \(error.localizedDescription)")
+                }
             }
             // 恢复按钮状态
             sender.state = NSControl.StateValue.off
