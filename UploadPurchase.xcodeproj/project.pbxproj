@@ -465,6 +465,7 @@
 					"$(PROJECT_DIR)/UploadPurchase/itms/java/lib/jli",
 					"$(PROJECT_DIR)/UploadPurchase/itms/java/lib/server",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.3k.UploadPurchase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -492,6 +493,7 @@
 					"$(PROJECT_DIR)/UploadPurchase/itms/java/lib/jli",
 					"$(PROJECT_DIR)/UploadPurchase/itms/java/lib/server",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.3k.UploadPurchase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

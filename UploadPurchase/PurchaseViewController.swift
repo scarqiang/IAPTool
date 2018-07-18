@@ -99,6 +99,12 @@ class PurchaseViewController: NSViewController {
     }
     
     func checkPurchaseItems() -> Bool {
+        
+        if purchaseItems.count == 0 {
+            tipsTextField.stringValue = "❗️商品信息缺失"
+            return false
+        }
+        
         for item in purchaseItems {
             if item.description.isEmpty || item.priceTier.isEmpty || item.productID.isEmpty || item.productType.isEmpty || item.productTitle.isEmpty || item.screenshortURL.isEmpty || item.referenceName.isEmpty {
                 tipsTextField.stringValue = "❗️商品信息缺失，请检查第\(item.index + 1)个商品\"\(item.productTitle)\"的配置信息"
