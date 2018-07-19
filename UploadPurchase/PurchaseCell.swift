@@ -119,6 +119,7 @@ class PurchaseCell: NSTableCellView {
         purshaseItem!.priceTier = "\(priceTierPopBtn.indexOfSelectedItem + 1)"
         
         purshaseItem!.index = index
+        
     }
     
     private func settingPriceTiper() {
@@ -184,9 +185,25 @@ extension PurchaseCell: NSTextViewDelegate, NSTextFieldDelegate {
 
     // MARK: - NSControlSubclassNotifications NSTextFieldDelegate
     override func controlTextDidChange(_ obj: Notification) {
+        
+        let textField = obj.object as! NSTextField
+        if textField === self.screenshortField {
+            
+            purshaseItem!.screenshortURL = screenshortField.stringValue
+
+            
+            let fileName = (self.purshaseItem!.screenshortURL as NSString).lastPathComponent
+            
+            do {
+                try FileManager.default.copyItem(atPath: screenshortField.stringValue, toPath: "\(TaskTool.shared.taggertAppMetadatPath)/\(fileName)")
+            } catch  {
+                print("ERROR: Save shootscreen error: \(error.localizedDescription)")
+            }
+        }
+        
         self.refreshPurchasseItem()
     }
-
+    
     // MARK: - NSTextViewDelegate
     func textDidChange(_ notification: Notification) {
         self.refreshPurchasseItem()

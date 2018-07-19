@@ -92,6 +92,7 @@ class LoginViewController: NSViewController {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     self.presentPurchaseViewController()
+                    self.tipsField.stringValue = ""
                 })
             }
             else {

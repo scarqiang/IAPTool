@@ -53,6 +53,9 @@ class XMLProcessor {
         let node = locales?.first as! XMLElement
         let nodeAttr = node.attributes?.first
         language = nodeAttr?.stringValue
+        
+        detachPreviousPurchase()
+        
         return true
     }
     
@@ -168,6 +171,22 @@ class XMLProcessor {
     }
     
     // MARK: Modifying XML
+    func detachPreviousPurchase() {
+        let purchaseElementPath = "/package/software/software_metadata/in_app_purchases/in_app_purchase"
+        let purchaseArr = execXPath(purchaseElementPath)
+        
+        if purchaseArr?.count == 0 {
+            return
+        }
+        
+        for purchase in purchaseArr! {
+            purchase.detach()
+        }
+        
+        overwrite()
+    }
+    
+    
     func setInAppPurchase(_ item: PurchaseItem) {
         let purchasesXPath = "/package/software/software_metadata/in_app_purchases"
         let purchases = execXPath(purchasesXPath)
