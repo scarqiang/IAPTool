@@ -21,7 +21,6 @@ class LoginViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         self.indicator.isHidden = true
-        
         let username = UserInfo.fetchUserInfo(UserInfo.usernameKey)
         let password = UserInfo.fetchUserInfo(UserInfo.passwordKey)
         let appleID = UserInfo.fetchUserInfo(UserInfo.appleIDKey)

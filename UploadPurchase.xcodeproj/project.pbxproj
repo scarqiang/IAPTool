@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E23225020FD93650011D44F /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E23224F20FD93650011D44F /* SubmitViewController.swift */; };
+		1E23225420FF43370011D44F /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1E23225120FF37C80011D44F /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1EA11D0620EA020D008A338E /* CustomTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA11D0520EA020D008A338E /* CustomTextFieldCell.swift */; };
 		1EA11D0820EA0609008A338E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA11D0720EA0609008A338E /* LoginViewController.swift */; };
 		1EA11D0A20EA2E2E008A338E /* TaskTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA11D0920EA2E2E008A338E /* TaskTool.swift */; };
@@ -38,8 +39,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1E23225520FF43370011D44F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1E23225420FF43370011D44F /* CryptoSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1E23224F20FD93650011D44F /* SubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
+		1E23225120FF37C80011D44F /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		1EA11D0520EA020D008A338E /* CustomTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldCell.swift; sourceTree = "<group>"; };
 		1EA11D0720EA0609008A338E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1EA11D0920EA2E2E008A338E /* TaskTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTool.swift; sourceTree = "<group>"; };
@@ -86,6 +102,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E0B968820FF485D00CC8EF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1EAC854C20E476F30066F76F = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +116,7 @@
 				1EAC856A20E476F40066F76F /* UploadPurchaseTests */,
 				1EAC857520E476F40066F76F /* UploadPurchaseUITests */,
 				1EAC855620E476F30066F76F /* Products */,
+				1E0B968820FF485D00CC8EF6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +133,7 @@
 		1EAC855720E476F30066F76F /* UploadPurchase */ = {
 			isa = PBXGroup;
 			children = (
+				1E23225120FF37C80011D44F /* CryptoSwift.framework */,
 				1EAC855820E476F30066F76F /* AppDelegate.swift */,
 				1EA11D0720EA0609008A338E /* LoginViewController.swift */,
 				1EAC855A20E476F30066F76F /* PurchaseViewController.swift */,
@@ -154,6 +179,7 @@
 				1EAC855120E476F30066F76F /* Sources */,
 				1EAC855220E476F30066F76F /* Frameworks */,
 				1EAC855320E476F30066F76F /* Resources */,
+				1E23225520FF43370011D44F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -454,6 +480,10 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UploadPurchase",
+				);
 				INFOPLIST_FILE = UploadPurchase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -482,6 +512,10 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UploadPurchase",
+				);
 				INFOPLIST_FILE = UploadPurchase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
