@@ -60,7 +60,6 @@ class LoginViewController: NSViewController {
     }
     
     func startLogin() {
-
 //        let  xmlProcessor = XMLProcessor()
 //
 //        xmlProcessor.loadFromFile("\(TaskTool.shared.metadataPath)/\(1039795442).itmsp/metadata.xml")
@@ -103,11 +102,29 @@ class LoginViewController: NSViewController {
     
     func presentPurchaseViewController() {
         
-        let nextWindowController = storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PurchaseWindow")) as! NSWindowController
-        nextWindowController.window?.orderFront(nil)
-        nextWindowController.window?.center()
+//        if #available(OSX 10.13, *) {
+//            let nextWindowController = storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "PurchaseWindow")) as! NSWindowController
+//            nextWindowController.window?.orderFront(nil)
+//            nextWindowController.window?.center()
+//            self.view.window?.orderOut(nil)
+//
+//        } else {
+//                self.view.window?.orderOut(nil)
+//                let nextWindowController = storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "PurchaseWindow")) as! NSWindowController
+//                let application = NSApplication.shared
+//                application.runModal(for: nextWindowController.window!)
+//                nextWindowController.window!.close()
+//        }
         
         self.view.window?.orderOut(nil)
+        let nextWindowController = storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "PurchaseWindow")) as! NSWindowController
+        let application = NSApplication.shared
+        application.runModal(for: nextWindowController.window!)
+        nextWindowController.window!.close()
+        
+        
+//        let nextViewController = storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PurchaseViewController")) as! NSViewController
+//        self.presentViewController(nextViewController, animator: ReplacePresentationAnimator())
     }
     
 }

@@ -30,15 +30,25 @@ class PurchaseViewController: NSViewController {
         tableView.delegate = self
         tipsTextField.isHidden = true
         indicator.isHidden = true
-    
+        
+        
         // Do any additional setup after loading the view.
     }
 
+    
+    override func viewWillDisappear() {
+        super.viewWillDisappear()
+        let application = NSApplication.shared
+        application.stopModal()
+    }
+    
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
     }
+    
+
     
     @IBAction func didClickAddItemBtn(_ sender: NSButton) {
         let item = PurchaseItem()

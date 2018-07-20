@@ -50,6 +50,8 @@ class SubmitViewController: NSViewController {
         if self.result {
             TaskTool.shared.deleteTaggertItmsp()
             dismissViewController(self)
+            let application = NSApplication.shared
+            application.stopModal()
             NSApp.terminate(nil)
         }
         else {
