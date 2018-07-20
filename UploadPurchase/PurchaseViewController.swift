@@ -134,6 +134,9 @@ class PurchaseViewController: NSViewController {
     
     func showSumbitViewController() {
         
+        let application = NSApplication.shared
+        application.stopModal()
+        
         let nextViewController = storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("SubmitViewController")) as! SubmitViewController
         self.presentViewControllerAsSheet(nextViewController)
     

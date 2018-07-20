@@ -26,6 +26,7 @@ class SubmitViewController: NSViewController {
     
     override func viewDidAppear() {
         super.viewDidAppear()
+        
         loadingView.startAnimation(self);
         TaskTool.shared.submitPurchase { (success, errorMsg) in
             self.loadingView.stopAnimation(self)
@@ -50,8 +51,7 @@ class SubmitViewController: NSViewController {
         if self.result {
             TaskTool.shared.deleteTaggertItmsp()
             dismissViewController(self)
-            let application = NSApplication.shared
-            application.stopModal()
+
             NSApp.terminate(nil)
         }
         else {

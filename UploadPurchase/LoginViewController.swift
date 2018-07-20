@@ -120,7 +120,6 @@ class LoginViewController: NSViewController {
         let nextWindowController = storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "PurchaseWindow")) as! NSWindowController
         let application = NSApplication.shared
         application.runModal(for: nextWindowController.window!)
-        nextWindowController.window!.close()
         
         
 //        let nextViewController = storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PurchaseViewController")) as! NSViewController
